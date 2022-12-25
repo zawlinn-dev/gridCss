@@ -1,0 +1,21 @@
+@import "./template.css";
+
+.container {
+  display: grid;
+  gap: 0.5rem;
+
+  height: 100vh;
+  /* without height fraction, % and auto will not working */
+
+  /* Grid Template Row Explicit */
+
+  grid-template-columns: 100px 200px;
+  /* grid-template-columns: repeat(auto-fill, 100px); */
+  grid-template-rows: 70px 140px 120px 80px;
+
+  /* Because default height is content height -  */
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(5, 20%);
+  /* grid-template-rows: repeat(auto-fill, 100px); auto-fill and auto-fit will not working for grid template rows */
+}

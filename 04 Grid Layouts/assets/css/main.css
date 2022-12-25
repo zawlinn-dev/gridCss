@@ -1,0 +1,63 @@
+@import "./template.css";
+
+.container {
+  display: flex;
+  row-gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 3rem 0;
+}
+
+.items {
+  width: 30%;
+}
+
+.controller {
+  min-width: 400px;
+  width: 30%;
+  height: 100px;
+  margin: 30px auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #999;
+
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto 1fr auto;
+  align-content: end;
+  align-items: center;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: var(--price-color);
+}
+
+.track {
+  height: 0.5rem;
+  background-color: var(--bg-color-03);
+}
+
+.box_container {
+  margin-top: 3rem;
+  border: 1rem solid var(--bg-color-03);
+  width: 150px;
+  height: 150px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: end;
+  align-content: space-between;
+}
+
+.box_container > * {
+  background-color: var(--bg-color-03);
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.box1,
+.box2 {
+  justify-self: start;
+}

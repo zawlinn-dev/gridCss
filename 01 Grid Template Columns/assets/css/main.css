@@ -1,0 +1,45 @@
+@import "./template.css";
+
+.container {
+  display: grid;
+  gap: 0.5rem;
+
+  /*
+  *
+  *
+  *
+   Grid Template Columns by Explicit
+    and 
+    Grid Template Rows is Created by Implicit
+    *
+    *
+    *
+    ***/
+
+  grid-template-columns: 100px;
+  /* grid-auto-flow: column; row is default and another value is dense */
+  grid-template-columns: 100px 200px;
+  grid-template-columns: 100px 200px 100px 200px;
+  grid-template-columns: 100px 100px auto 1fr;
+  grid-template-columns: repeat(2, 100px 200px);
+  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 100px repeat(4, 1fr);
+  grid-template-columns: repeat(4, 30%);
+  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 80% 1fr;
+  grid-template-columns: 80% auto;
+  grid-template-columns: auto 1fr;
+
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  /* row is default and another value is dense */
+  grid-auto-columns: 200px;
+  /* Define value for Implicit Columns */
+
+  /* How it Work */
+  /* 1. find fix value (px or percentage)
+  2. find Fraction value
+  3. auto (content width) */
+}

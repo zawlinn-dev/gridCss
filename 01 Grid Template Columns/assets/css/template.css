@@ -1,0 +1,56 @@
+/* Font Installation */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&family=Rubik+Vinyl&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --light-blue: #4b6cd8;
+  --bg-color-01: #ee2748;
+  --bg-color-02: #800f80;
+  --bg-color-03: #f8b31d;
+  --txt-color: #353535;
+  --price-color: #dedede;
+  --btn-txt: #fff;
+  font-size: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  background: linear-gradient(to right, var(--bg-color-01), var(--bg-color-02));
+  padding: 2rem;
+  user-select: none;
+}
+
+.items {
+  padding: 1rem;
+  background-color: var(--bg-color-03);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+hr {
+  background-color: var(--bg-color-03);
+  height: 5px;
+  margin: 1.5rem 0;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--btn-txt);
+  font-family: "Poppins";
+  text-transform: uppercase;
+}
+
+.s-3 {
+  font-size: 3rem;
+}
