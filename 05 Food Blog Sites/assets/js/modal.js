@@ -19,14 +19,7 @@ function modalInit() {
       const getImg = this.querySelector("img");
 
       if (getImg.src) {
-        getAlt = getImg.alt;
-
-        let gCounter = getImg.alt.slice(-2);
-
-        gCounter =
-          Number(gCounter) <= 9 ? getImg.alt.slice(-1) : getImg.alt.slice(-2);
-
-        imgIndex = gCounter - 1;
+        getIndex(getImg);
 
         mContainer.classList.add("show");
 
@@ -49,6 +42,7 @@ function modalInit() {
 // Add Event Listener of whole Docs
 
 document.addEventListener("click", function (e) {
+  console.log(Boolean(e.target.src));
   e.preventDefault();
   // Close Modal Box
   if (
@@ -60,8 +54,6 @@ document.addEventListener("click", function (e) {
 
   //
   const getSliderImg = document.querySelectorAll(".slider_img");
-
-  console.log(sContainer.scrollWidth, scrollIndex);
 
   if (e.target.classList.contains("slideRight")) {
     num >= 22 ? (num = 0) : num++;
@@ -84,7 +76,6 @@ document.addEventListener("click", function (e) {
   if (e.target.classList.contains("next")) {
     imgIndex >= 26 ? (imgIndex = 0) : imgIndex++;
     const a = getSliderImg[imgIndex].querySelector("img");
-    console.log(imgIndex, a);
     modalView(a);
     activeSlide(imgIndex);
     // activeScroll(a.offsetLeft);
@@ -97,6 +88,18 @@ document.addEventListener("click", function (e) {
     modalView(a);
 
     modalCaption(imgIndex + 1);
+    activeSlide(imgIndex);
+  }
+
+  //
+
+  if (e.target.src) {
+    modalView(e.target);
+
+    getIndex(e.target);
+
+    modalCaption(imgIndex + 1);
+
     activeSlide(imgIndex);
   }
 });
@@ -142,8 +145,6 @@ function activeSlide(e) {
 
   slide.forEach((val) => val.classList.remove("active"));
 
-  console.log(e);
-
   num = e;
 
   slide[e].classList.add("active");
@@ -161,6 +162,16 @@ function activeScroll(e) {
     left: e,
     behavior: "smooth",
   });
+}
+
+function getIndex(e) {
+  getAlt = e.alt;
+
+  let gCounter = e.alt.slice(-2);
+
+  gCounter = Number(gCounter) <= 9 ? e.alt.slice(-1) : e.alt.slice(-2);
+
+  imgIndex = gCounter - 1;
 }
 
 function generateHTML3([h, v]) {
